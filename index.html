@@ -1004,6 +1004,18 @@ p.section-lede{color:var(--text-soft);margin:0 0 32px;font-size:15px;}
 
     <div id="activities-map" style="display:none;"></div>
     <div id="activities-container"></div>
+
+    <div id="tokyo-planning-block">
+      <div class="quartier-header">🗓️ Suggestion de planning</div>
+      <div class="day-grid" style="margin-bottom:4px;">
+        <div class="day-card city-tok"><div class="d-num"><i class="ti ti-bed"></i> JOUR 1 · MER 16</div><div class="d-title">Arrivée &amp; repos</div><div class="d-desc">Vol tardif, atterrissage en fin de journée — pas d'activité prévue.</div></div>
+        <div class="day-card city-tok"><div class="d-num"><i class="ti ti-torii-gate"></i> JOUR 2 · JEU 17</div><div class="d-title">Asakusa → Akihabara</div><div class="d-desc">Sensō-ji le matin, direction Akihabara ensuite.</div></div>
+        <div class="day-card city-tok"><div class="d-num"><i class="ti ti-walk"></i> JOUR 3 · VEN 18</div><div class="d-title">Yanesen</div><div class="d-desc">Nezu-jinja puis Yanaka Ginza.</div></div>
+        <div class="day-card city-tok"><div class="d-num"><i class="ti ti-building-skyscraper"></i> JOUR 4 · SAM 19</div><div class="d-title">Harajuku → Shibuya</div><div class="d-desc">Harajuku et Meiji-jingū, puis Shibuya et Shibuya Sky, soirée à Bellovisto.</div></div>
+        <div class="day-card city-tok"><div class="d-num"><i class="ti ti-tools-kitchen-2"></i> JOUR 5 · DIM 20</div><div class="d-title">Gotoku-ji → Shinjuku</div><div class="d-desc">Gotoku-ji le matin, Shinjuku le soir avec Omoide Yokocho.</div></div>
+        <div class="day-card travel"><div class="d-num"><i class="ti ti-train"></i> JOUR 6 · LUN 21</div><div class="d-title">Départ Kanazawa</div><div class="d-desc">Train vers Kanazawa — pas d'activité prévue.</div></div>
+      </div>
+    </div>
   </section>
 
   <!-- TODO -->
@@ -1449,6 +1461,7 @@ document.querySelectorAll("#dest-row .dest-pill").forEach(function(btn){
     currentCity = btn.getAttribute("data-city");
     document.querySelectorAll("#dest-row .dest-pill").forEach(function(b){ b.classList.remove("active"); });
     btn.classList.add("active");
+    document.getElementById("tokyo-planning-block").style.display = currentCity === "tokyo" ? "" : "none";
     renderActivities();
   });
 });
